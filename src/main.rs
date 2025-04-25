@@ -4,16 +4,16 @@ use std::fmt;
 use std::fmt::Display;
 
 #[derive(Debug, PartialEq)]
-enum FileState {
+pub enum FileState {
     Open,
     Closed,
 }
 
 #[derive(Debug)]
-struct File {
-    name: String,
+pub struct File {
+    pub name: String,
     data: Vec<u8>,
-    state: FileState,
+    pub state: FileState,
 }
 
 impl Display for FileState {
@@ -31,7 +31,7 @@ impl Display for File {
 }
 
 impl File {
-    fn new(name: &str) -> File {
+    pub fn new(name: &str) -> File {
         File {
             name: String::from(name),
             data: vec![],
